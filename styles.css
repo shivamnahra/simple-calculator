@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.calculator-container {
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.calculator {
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 320px;
+}
+
+.display {
+    width: 100%;
+    padding: 20px;
+    font-size: 2rem;
+    text-align: right;
+    background: #1a1a1a;
+    color: #00ff00;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', monospace;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.display::placeholder {
+    color: #666;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 20px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 8px;
+    background: #404040;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: #505050;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn.operator {
+    background: #667eea;
+}
+
+.btn.operator:hover {
+    background: #7c8ff5;
+}
+
+.btn.clear {
+    background: #e74c3c;
+    grid-column: span 1;
+}
+
+.btn.clear:hover {
+    background: #ff6b6b;
+}
+
+.btn.equals {
+    background: #27ae60;
+    grid-column: span 1;
+    font-size: 1.5rem;
+}
+
+.btn.equals:hover {
+    background: #2ecc71;
+}
+
+.btn.zero {
+    grid-column: span 1;
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
